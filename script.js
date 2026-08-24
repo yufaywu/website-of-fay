@@ -1,40 +1,79 @@
-document.querySelectorAll("[data-rating]").forEach(rating => {
+const movies = {
 
-    const score = parseFloat(rating.dataset.rating);
+    spiderman: {
+        title: "蜘蛛人：重生日",
+        rating: "★★★★½",
+        thoughts: "故事很完整，主角很努力，但是現實沒人記得他，令人心碎。",
+        poster: "images/spiderman.jpg"
+    },
 
-    const fullStars = Math.floor(score);
+    dragon: {
+        title: "馴龍高手",
+        rating: "★★★★☆",
+        thoughts: "跟動畫內容一樣，畫面非常逼真。",
+        poster: "images/dragon.jpg"
+    },
 
-    const hasHalfStar = score % 1 !== 0;
+    f1: {
+        title: "F1電影",
+        rating: "★★★★½",
+        thoughts: "主角們的心路歷程很勵志。",
+        poster: "images/f1.jpg"
+    }
 
-    const totalStars = 5;
-
-
-    for (let i = 1; i <= totalStars; i++) {
-
-        const star = document.createElement("span");
-
-        star.textContent = "★";
-
-        star.classList.add("star");
-
-
-        if (i <= fullStars) {
-
-            star.classList.add("full");
-
-        } 
-        
-        else if (
-            i === fullStars + 1 &&
-            hasHalfStar
-        ) {
-
-            star.classList.add("half");
-
-        }
+};
 
 
-        rating.appendChild(star);
+const cards = document.querySelectorAll(".movie-card");
+
+const modal = document.getElementById("movie-modal");
+
+const closeButton = document.getElementById("close-modal");
+
+const modalPoster = document.getElementById("modal-poster");
+
+const modalTitle = document.getElementById("modal-title");
+
+const modalRating = document.getElementById("modal-rating");
+
+const modalThoughts = document.getElementById("modal-thoughts");
+
+
+cards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const movieName = card.dataset.movie;
+
+        const movie = movies[movieName];
+
+        modalPoster.src = movie.poster;
+
+        modalTitle.textContent = movie.title;
+
+        modalRating.textContent = movie.rating;
+
+        modalThoughts.textContent = movie.thoughts;
+
+        modal.classList.add("show");
+
+    });
+
+});
+
+
+closeButton.addEventListener("click", () => {
+
+    modal.classList.remove("show");
+
+});
+
+
+modal.addEventListener("click", (event) => {
+
+    if (event.target === modal) {
+
+        modal.classList.remove("show");
 
     }
 
