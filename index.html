@@ -6,72 +6,53 @@
     <title>Fay's Movie Diary</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
+    
 <body>
-
     <header>
         <h1>FAY'S MOVIE DIARY</h1>
         <p>Movies I've watched 🎬</p>
     </header>
 
     <main>
-
         <section class="movies">
             <h2>MY MOVIES</h2>
-
             <div class="movie-grid">
 
                 <!-- Spider-Man -->
                 <a href="spiderman.html" class="movie-card">
-                    <img src="images/spiderman.jpg" alt="Spider-Man: Brand New Day">
+                    <img src="images/spiderman.jpg" alt="Spider-Man: Brand New Day" >
                     <div class="movie-info">
                         <h3>蜘蛛人：重生日</h3>
                         <p>SPIDER-MAN: BRAND NEW DAY</p>
                         <p class="rating">★★★★½</p>
                     </div>
                 </a>
-
+                
                 <!-- How to Train Your Dragon -->
-                <div class="movie-card" data-movie="dragon">
-                    <img src="images/dragon.jpg" alt="馴龍高手">
+                <a href="dragon.html" class="movie-card">
+                    <img src="images/dragon.jpg" alt="How to Train Your Dragon" >
                     <div class="movie-info">
                         <h3>馴龍高手</h3>
                         <p>HOW TO TRAIN YOUR DRAGON</p>
                         <p class="rating">★★★★☆</p>
                     </div>
-                </div>
-
+                </a>
+                
                 <!-- F1 -->
-                <div class="movie-card" data-movie="f1">
-                    <img src="images/f1.jpg" alt="F1電影">
+                <a href="f1.html" class="movie-card">
+                    <img src="images/f1.jpg" alt="F1 The Movie" >
                     <div class="movie-info">
                         <h3>F1電影</h3>
                         <p>F1 THE MOVIE</p>
-                        <p class="rating">★★★★★</p>
+                        <p class="rating">★★★★½</p>
                     </div>
-                </div>
-
+                </a>
             </div>
         </section>
-
     </main>
 
-    <div id="movie-modal" class="modal">
-    <div class="modal-content">
-        <button id="close-modal">×</button>
-        <img id="modal-poster" src="" alt="">
-        <div class="modal-text">
-            <h2 id="modal-title"></h2>
-            <p id="modal-rating"></p>
-            <h3>MY THOUGHTS</h3>
-            <p id="modal-thoughts"></p>
-        </div>
-    </div>
-</div>
-    
     <footer>
         <p>Made by Fay · 2026</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
