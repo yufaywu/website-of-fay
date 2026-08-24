@@ -33,6 +33,9 @@ document.querySelectorAll("[data-rating]").forEach(rating => {
 
         }
 
+
+        rating.appendChild(star);
+
     }
 
 });
