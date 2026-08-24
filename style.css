@@ -2,36 +2,48 @@
 
 .rating,
 .detail-rating {
-    display: flex;
-    align-items: center;
-    gap: 3px;
     color: #ffd45c;
-}
-
-/* Individual Star */
-.star {
-    position: relative;
-    display: inline-block;
+    letter-spacing: 3px;
     font-size: 20px;
     line-height: 1;
+}
+
+
+/* Stars */
+
+.star {
+    display: inline-block;
+    position: relative;
+
+    width: 1em;
+
     color: #444444;
 }
 
 
 /* Full Star */
+
 .star.full {
     color: #ffd45c;
 }
 
 
 /* Half Star */
+
+.star.half {
+    color: #444444;
+}
+
 .star.half::before {
     content: "★";
+
     position: absolute;
     left: 0;
     top: 0;
-    width: 50%;
-    overflow: hidden;
-    color: #ffd45c;
 
+    width: 50%;
+
+    overflow: hidden;
+
+    color: #ffd45c;
 }
