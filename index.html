@@ -22,7 +22,7 @@
             <div class="movie-grid">
 
                 <!-- Spider-Man -->
-                <div class="movie-card">
+                <div class="movie-card" data-movie="spiderman">
                     <img src="images/spiderman.jpg" alt="蜘蛛人：重生日">
                     <div class="movie-info">
                         <h3>蜘蛛人：重生日</h3>
@@ -32,17 +32,17 @@
                 </div>
 
                 <!-- How to Train Your Dragon -->
-                <div class="movie-card">
+                <div class="movie-card" data-movie="dragon">
                     <img src="images/dragon.jpg" alt="馴龍高手">
                     <div class="movie-info">
                         <h3>馴龍高手</h3>
                         <p>HOW TO TRAIN YOUR DRAGON</p>
-                        <p class="rating">★★★★★</p>
+                        <p class="rating">★★★★☆</p>
                     </div>
                 </div>
 
                 <!-- F1 -->
-                <div class="movie-card">
+                <div class="movie-card" data-movie="f1">
                     <img src="images/f1.jpg" alt="F1電影">
                     <div class="movie-info">
                         <h3>F1電影</h3>
@@ -56,9 +56,22 @@
 
     </main>
 
+    <div id="movie-modal" class="modal">
+    <div class="modal-content">
+        <button id="close-modal">×</button>
+        <img id="modal-poster" src="" alt="">
+        <div class="modal-text">
+            <h2 id="modal-title"></h2>
+            <p id="modal-rating"></p>
+            <h3>MY THOUGHTS</h3>
+            <p id="modal-thoughts"></p>
+        </div>
+    </div>
+</div>
+    
     <footer>
         <p>Made by Fay · 2026</p>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
