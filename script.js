@@ -22,8 +22,8 @@ document.querySelectorAll("[data-rating]").forEach(rating => {
 
             star.classList.add("full");
 
-        }
-
+        } 
+        
         else if (
             i === fullStars + 1 &&
             hasHalfStar
@@ -32,9 +32,6 @@ document.querySelectorAll("[data-rating]").forEach(rating => {
             star.classList.add("half");
 
         }
-
-
-        rating.appendChild(star);
 
     }
 
