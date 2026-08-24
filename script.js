@@ -1,79 +1,40 @@
-const movies = {
+document.querySelectorAll("[data-rating]").forEach(rating => {
 
-    spiderman: {
-        title: "蜘蛛人：重生日",
-        rating: "★★★★½",
-        thoughts: "故事很完整，主角很努力，但是現實沒人記得他，令人心碎。",
-        poster: "images/spiderman.jpg"
-    },
+    const score = parseFloat(rating.dataset.rating);
 
-    dragon: {
-        title: "馴龍高手",
-        rating: "★★★★☆",
-        thoughts: "跟動畫內容一樣，畫面非常逼真。",
-        poster: "images/dragon.jpg"
-    },
+    const fullStars = Math.floor(score);
 
-    f1: {
-        title: "F1電影",
-        rating: "★★★★½",
-        thoughts: "主角們的心路歷程很勵志。",
-        poster: "images/f1.jpg"
-    }
+    const hasHalfStar = score % 1 !== 0;
 
-};
+    const totalStars = 5;
 
 
-const cards = document.querySelectorAll(".movie-card");
+    for (let i = 1; i <= totalStars; i++) {
 
-const modal = document.getElementById("movie-modal");
+        const star = document.createElement("span");
 
-const closeButton = document.getElementById("close-modal");
+        star.textContent = "★";
 
-const modalPoster = document.getElementById("modal-poster");
-
-const modalTitle = document.getElementById("modal-title");
-
-const modalRating = document.getElementById("modal-rating");
-
-const modalThoughts = document.getElementById("modal-thoughts");
+        star.classList.add("star");
 
 
-cards.forEach(card => {
+        if (i <= fullStars) {
 
-    card.addEventListener("click", () => {
+            star.classList.add("full");
 
-        const movieName = card.dataset.movie;
+        }
 
-        const movie = movies[movieName];
+        else if (
+            i === fullStars + 1 &&
+            hasHalfStar
+        ) {
 
-        modalPoster.src = movie.poster;
+            star.classList.add("half");
 
-        modalTitle.textContent = movie.title;
-
-        modalRating.textContent = movie.rating;
-
-        modalThoughts.textContent = movie.thoughts;
-
-        modal.classList.add("show");
-
-    });
-
-});
+        }
 
 
-closeButton.addEventListener("click", () => {
-
-    modal.classList.remove("show");
-
-});
-
-
-modal.addEventListener("click", (event) => {
-
-    if (event.target === modal) {
-
-        modal.classList.remove("show");
+        rating.appendChild(star);
 
     }
 
